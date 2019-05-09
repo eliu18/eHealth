@@ -1,12 +1,29 @@
-<form action="">
-    <label class="user-login">
-    USUARIO:
-    <input type="text" name="user" placeholder="USUARIO" [(ngModel)]="loginForm.user"/>
-  </label>
-    <label class="password-login">
-    CONTRASEÑA:
-    <input type="password" name="passLogin" placeholder="CONTRASEÑA" [(ngModel)]="loginForm.password"/>
-  </label>
+<form>
+    <div class="parent-login">
+        <div class="child-login">
+            <label class="user-login">
+        USUARIO:
+        <input
+          type="text"
+          name="user"
+          placeholder="USUARIO"
+          [(ngModel)]="loginForm.user"
+        />
+      </label>
+        </div>
 
-    <button>Ingresar!</button>
+        <div class="child-login">
+            <label class="password-login">
+        CONTRASEÑA:
+        <input
+          type="password"
+          name="passLogin"
+          placeholder="CONTRASEÑA"
+          [(ngModel)]="loginForm.password"
+        />
+      </label>
+        </div>
+
+        <button type="submit" (click)="login()">Ingresar!</button>
+    </div>
 </form>

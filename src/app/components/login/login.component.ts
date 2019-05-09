@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Login} from '../../interfaces/login';
+import { Login } from '../../interfaces/login';
 import { LoginService } from 'src/app/services/login.service';
 @Component({
   selector: 'app-login',
@@ -8,16 +8,18 @@ import { LoginService } from 'src/app/services/login.service';
 })
 
 export class LoginComponent implements OnInit {
-  loginForm:Login = {
-    user: "",
-    password: ""
-  }
-  constructor(private ls: LoginService) { }
+  loginForm: Login = {
+    user: '',
+    password: ''
+  };
+  constructor(private lS: LoginService) { }
 
   ngOnInit() {
   }
 
-  login(){
-    this.ls.login(this.loginForm)
+  login() {
+    this.lS.login(this.loginForm).subscribe(data => {
+      console.log(data);
+    });
   }
 }
