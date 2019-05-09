@@ -1,12 +1,11 @@
 const express = require("express");
 const app = express();
-const config = require("./config");
-const { PORT, HOST } = config
+const config = require("./config/index");
+const { PORT, HOST } = config;
+const login = require("./services/apis/login");
 
-app.get('/login', function(req, res) {
-    res.send('ok');
-});
+app.use('/api/login', login);
 
 app.listen(PORT, HOST, () => {
-    console.log(`Server at: ${HOST}:${PORT}`)
+    console.log(`Server at: ${HOST}:${PORT}`);
 });
