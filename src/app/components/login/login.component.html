@@ -1,23 +1,23 @@
-<form>
-  <div class="parent-login">
-    <div class="young-login">
-      <div class="child-login">
-        <label class="user-login">
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <div class="parent-login">
+        <div class="young-login">
+            <div class="child-login">
+                <label class="user-login">
           <b> USUARIO: </b>
-          <input type="text" name="user" placeholder="USUARIO" [(ngModel)]="loginForm.user" />
+          <input type="text" formControlName="user" placeholder="USUARIO" required />
         </label>
-      </div>
+            </div>
 
-      <div class="child-login">
-        <label class="password-login">
+            <div class="child-login">
+                <label class="password-login">
           <b> CONTRASEÑA: </b>
-          <input type="password" name="passLogin" placeholder="CONTRASEÑA" [(ngModel)]="loginForm.password" />
+          <input type="password" formControlName="password" placeholder="CONTRASEÑA" required />
         </label>
-      </div>
+            </div>
 
-      <div class="child-login">
-        <button type="submit" (click)="login()">Ingresar!</button>
-      </div>
+            <div class="child-login">
+                <button type="submit">Ingresar!</button>
+            </div>
+        </div>
     </div>
-  </div>
 </form>
