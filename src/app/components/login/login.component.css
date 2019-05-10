@@ -3,11 +3,36 @@ form {
     top: 0;
     left: 0;
     border: 1px solid red;
-    width: 100vw;
-    height: 100vh;
+    width: calc(100% - 2px);
+    height: calc(100% - 4px);
 }
 
+label {
+    text-align: left;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
 
-/* .parent-login {
-    display: flex
-} */
+input {
+    display: block;
+    width: 200px;
+    margin: 10px 0px;
+}
+
+.parent-login {
+    border: 1px solid blue;
+    margin-top: 22vh;
+    display: flex;
+    justify-content: center
+}
+
+.young-login {
+    display: inline-block;
+    border: 1px solid green;
+    padding: 20px;
+}
+
+.child-login { 
+    display: flex;
+    justify-content: center;
+    padding: 15px 0px;
+}
