@@ -10,6 +10,7 @@ if (process.env.NODE_ENV === "development") {
         DB_PASSWORD: process.env.DEV_DB_PASSWORD,
         DB_HOST: process.env.DEV_DB_HOST,
         DB_NAME: process.env.DEV_DB_NAME,
+        JWT_SECRET: process.env.DEV_JWT_SECRET
     };
 
 } else if (process.env === "production") {
@@ -20,6 +21,7 @@ if (process.env.NODE_ENV === "development") {
         DB_PASSWORD: process.env.DEV_DB_PASSWORD,
         DB_HOST: process.env.DEV_DB_HOST,
         DB_NAME: process.env.DEV_DB_NAME,
+        JWT_SECRET: process.env.DEV_JWT_SECRET
     };
 }
 
