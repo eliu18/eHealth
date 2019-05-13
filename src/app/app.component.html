@@ -1,3 +1,10 @@
-<!--The content below is only a placeholder and can be replaced.-->
+<!-- Inicio || Consulta || Pacientes || Citas programadas -->
+<div class="parent-nav">
+    <nav *ngFor="let option of navOptions" routerLink="/{{option|uppercase}}">
+        <b>
+      {{ option | uppercase }}
+    </b>
+    </nav>
+</div>
 
 <router-outlet></router-outlet>

@@ -7,4 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'eHealth';
+  navOptions: Array<string> = ['inicio', 'consulta', 'pacientes', 'citas programadas'];
 }

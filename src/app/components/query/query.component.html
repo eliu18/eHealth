@@ -1,0 +1,42 @@
+<header>
+    <h1>Consulta</h1>
+</header>
+
+<hr />
+
+<!-- Busqueda de paciente -->
+<div class="parent-search-patient" *ngIf="!doesPatientExist">
+    <h3>Buscar paciente:</h3>
+    <input type="text" placeholder="Ej. Eliu Benitez" appUppercase (keydown)="onKeydownEvent($event)" [(ngModel)]="patient.name" />
+    <button type="submit" (click)="onSubmit(patient.name)">Buscar</button>
+</div>
+<section *ngIf="doesPatientExist">
+    <!-- Historial del paciente -->
+    <label>
+    <input type="text" placeholder="Historial del paciente" />
+  </label>
+
+    <!-- Sintomas del paciente
+        -- Mucosidad --
+        -- Fiebre --
+        -- Tos --
+        -- Dolor de cuerpo --
+        -- Dolor de cabeza --
+        -- Nauseas --
+        -- Otros --
+    -->
+    <label>
+    <input type="text" placeholder="Sintomas" />
+  </label>
+
+    <!-- Datos Generales del paciente 
+        -- Temperatura -- 
+        -- Estatura -- 
+        -- Peso -- 
+        -- Presion -- 
+        -- Otros -- 
+    -->
+    <label>
+    <input type="text" placeholder="Datos generales" />
+  </label>
+</section>

@@ -12,6 +12,10 @@ class LoginController {
             });
         });
     }
+
+    getUserByID() {
+
+    }
 }
 
 module.exports = LoginController;
