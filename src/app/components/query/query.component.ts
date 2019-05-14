@@ -23,9 +23,9 @@ export class QueryComponent implements OnInit {
     }
   }
 
-  onKeydownEvent(event: KeyboardEvent): void {
+  onKeydownEvent(event: KeyboardEvent, patientName: string): void {
     if (event.keyCode === 13) {
-      console.log('Enter');
+      console.log(patientName);
     }
   }
 
