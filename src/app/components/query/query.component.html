@@ -5,12 +5,9 @@
 <hr />
 
 <!-- Busqueda de paciente -->
-<div class="parent-search-patient" *ngIf="!doesPatientExist">
-    <h3>Buscar paciente:</h3>
-    <input type="text" placeholder="Ej. Eliu Benitez" appUppercase (keydown)="onKeydownEvent($event)" [(ngModel)]="patient.name" />
-    <button type="submit" (click)="onSubmit(patient.name)">Buscar</button>
-</div>
-<section *ngIf="doesPatientExist">
+<app-search-patient></app-search-patient>
+
+<section *ngIf="">
     <!-- Historial del paciente -->
     <label>
     <input type="text" placeholder="Historial del paciente" />

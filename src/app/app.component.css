@@ -17,3 +17,7 @@ nav {
     border-bottom: 0px;
     outline: none;
 }
+
+a {
+    font-weight: bold;
+}

@@ -1,9 +1,9 @@
 <!-- Inicio || Consulta || Pacientes || Citas programadas -->
 <div class="parent-nav">
     <nav *ngFor="let option of navOptions" routerLink="/{{option|uppercase}}">
-        <b>
+        <a>
       {{ option | uppercase }}
-    </b>
+    </a>
     </nav>
 </div>
 
