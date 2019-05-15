@@ -1,11 +1,11 @@
 <div class="container">
     <!-- Search input -->
     <div></div>
-    <div class="patient-search-h3" *ngIf="!doesPatientExist">
+    <div class="patient-search-h3">
         <h3>Buscar paciente:</h3>
     </div>
     <div class="patient-search-input">
-        <input #searchPatientName="ngModel" type="search" placeholder="Ej. Eliu Benitez" appUppercase (keydown)="onKeydownEvent($event)" [(ngModel)]="patient.name" />
+        <input type="search" placeholder="Ej. Eliu Benitez" (keyup)="searchPatient($event)" [(ngModel)]="patient.name" />
     </div>
     <div class="patient-search-button">
         <button type="submit" (click)="onSubmit(patient.name)">Buscar</button>
@@ -15,7 +15,7 @@
     <!-- Filtered List -->
     <div></div>
     <div></div>
-    <div class="patient-filtered-list-parent" *ngIf="patientsFilteredList.length>0">
+    <div class="patient-filtered-list-parent" *ngIf="false">
         <div class="patient-filtered-list-child">
             <ul *ngFor="let patient of patientsFilteredList">
                 <li>{{ patient.name }}</li>

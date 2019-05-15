@@ -11,6 +11,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { UppercaseDirective } from './directives/uppercase.directive';
 import { SearchPatientComponent } from './components/search-patient/search-patient.component';
+import { AddPatientComponent } from './components/add-patient/add-patient.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { SearchPatientComponent } from './components/search-patient/search-patie
     QueryComponent,
     UppercaseDirective,
     SearchPatientComponent,
+    AddPatientComponent,
   ],
   imports: [
     BrowserModule,

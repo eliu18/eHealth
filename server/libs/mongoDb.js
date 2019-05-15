@@ -19,6 +19,7 @@ class MongoDB {
         return new Promise((resolve, reject) => {
             this.connect().then((db) => {
                 let data = db.collection(collection).find({}).toArray();
+                client.close();
                 resolve(data);
             });
         });

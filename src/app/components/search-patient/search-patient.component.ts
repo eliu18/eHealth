@@ -9,15 +9,15 @@ import { PatientsService } from 'src/app/services/patients.service';
 })
 export class SearchPatientComponent implements OnInit {
 
-  @ViewChild('searchPatientName', { read: ElementRef }) inputSearchPatientName: ElementRef;
-  patients: Array<Patient>; // Array that store all the patients
-  patientsFilteredList: Array<Patient>; // Array that store just the patients filtered by input
-  patient: Patient;
-  doesPatientExist: boolean = false;
+  patients: Array<Patient>; // Array that store all the patients from DB.
+  patientsFilteredList: Array<Patient>; // Array that store just the patients filtered by input.
+  patient: Patient; // Obj that store the input field value.
+  MAX_PATIENTS_SHOWED: number = 5; // Const that limit patients showed when searching by input.
+
   constructor(private pS: PatientsService) {
     this.patient = new Patient();
-    this.pS.getAllPatients().subscribe((data: any) => {
-      this.setAllPatients(data.patients);
+    this.pS.getAllPatients().subscribe((data: any) => { // Getting all patients from DB.
+      this.setAllPatients(data.patients);               // Storing all patients to patients.
     });
   }
 
@@ -32,28 +32,23 @@ export class SearchPatientComponent implements OnInit {
     return this.patients;
   }
 
-  onKeydownEvent(event: KeyboardEvent): void {
-    const patientName = this.inputSearchPatientName.nativeElement.value;
-    this.searchPatient(patientName);
-    if (event.keyCode === 13) {
-      console.log('Name selected');
+  searchPatient(event: KeyboardEvent): void {
+    if (this.patient.name.length >= 3) { // Search after three letters.
+      this.showPatientsFilteredByName(this.patient);
     }
   }
 
-  searchPatient(patientName) {
-    console.log(patientName);
-
+  showPatientsFilteredByName({ name }: Patient): void {
     this.patientsFilteredList = this.patients.filter((patient: Patient, i) => {
-      if (patient.name.indexOf(patientName) >= 0) {
+      if (patient.name.indexOf(name) >= 0) {
         return patient;
       }
     });
+    this.patientsFilteredList.slice(0, this.MAX_PATIENTS_SHOWED); // Get filtered patients with a limit.
   }
 
   onSubmit(patientName): void {
-    console.log(patientName);
     if (patientName) {
-      this.doesPatientExist = true;
     }
   }
 }
