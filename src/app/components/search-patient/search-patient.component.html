@@ -15,9 +15,9 @@
     <!-- Filtered List -->
     <div></div>
     <div></div>
-    <div class="patient-filtered-list-parent">
+    <div class="patient-filtered-list-parent" *ngIf="patientsFilteredList.length>0">
         <div class="patient-filtered-list-child">
-            <ul *ngFor="let patient of patients">
+            <ul *ngFor="let patient of patientsFilteredList">
                 <li>{{ patient.name }}</li>
             </ul>
         </div>

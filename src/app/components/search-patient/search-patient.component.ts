@@ -43,7 +43,7 @@ export class SearchPatientComponent implements OnInit {
   searchPatient(patientName) {
     console.log(patientName);
 
-    this.patients = this.patients.filter((patient: Patient, i) => {
+    this.patientsFilteredList = this.patients.filter((patient: Patient, i) => {
       if (patient.name.indexOf(patientName) >= 0) {
         return patient;
       }
