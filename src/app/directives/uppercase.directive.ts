@@ -1,9 +1,14 @@
+<<<<<<< HEAD
 import { Directive, ElementRef, Input, SimpleChanges, HostListener, Renderer2 } from '@angular/core';
+=======
+import { Directive, ElementRef, Input, HostListener, Renderer2 } from '@angular/core';
+>>>>>>> c05dc1cb61e5f3236b1f808c16b6d9e22b31d0df
 
 @Directive({
   selector: '[appUppercase]'
 })
 export class UppercaseDirective {
+<<<<<<< HEAD
   // @Input() appUppercase: boolean;
   constructor(private el: ElementRef, private renderer: Renderer2) {
   }
@@ -28,4 +33,16 @@ export class UppercaseDirective {
     }
   } */
 
+=======
+  constructor(private renderer: Renderer2, private el: ElementRef) {
+  }
+
+  @HostListener('keydown', ['$event']) newKey(e: KeyboardEvent) {
+    if ((e.keyCode >= 65 && e.keyCode <= 90) || (e.keyCode >= 97 && e.keyCode <= 122)) {
+      e.preventDefault();
+      const input = this.el.nativeElement.value += e.key.toUpperCase();
+      this.renderer.setProperty(this.el.nativeElement, 'value', input);
+    }
+  }
+>>>>>>> c05dc1cb61e5f3236b1f808c16b6d9e22b31d0df
 }

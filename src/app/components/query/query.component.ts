@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Patient } from 'src/app/models/patient';
 
 @Component({
   selector: 'app-query',
@@ -8,15 +7,13 @@ import { Patient } from 'src/app/models/patient';
 })
 export class QueryComponent implements OnInit {
 
-  patient: Patient;
-  doesPatientExist: boolean = false;
   constructor() {
-    this.patient = new Patient();
   }
 
   ngOnInit() {
   }
 
+<<<<<<< HEAD
   onSubmit(patientName): void {
     if (patientName) {
       this.doesPatientExist = true;
@@ -33,4 +30,6 @@ export class QueryComponent implements OnInit {
 
   }
 
+=======
+>>>>>>> c05dc1cb61e5f3236b1f808c16b6d9e22b31d0df
 }

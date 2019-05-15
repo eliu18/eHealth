@@ -14,37 +14,3 @@ h1 {
 hr {
     margin-bottom: 20px;
 }
-
-h3 {
-    color: #565656;
-    font-family: Arial, Helvetica, sans-serif;
-    margin: 0px;
-}
-
-.parent-search-patient {
-    display: flex;
-    justify-content: center;
-    margin-top: 40px;
-    font-size: 18px;
-}
-
-.parent-search-patient input {
-    margin-left: 20px;
-    width: 300px;
-    border: 1px solid lightgray;
-    border-radius: 2px;
-    text-align: center;
-}
-
-.parent-search-patient input ::placeholder {
-    color: lightgray;
-}
-
-.parent-search-patient button {
-    margin-left: 20px;
-    background-color: #0099a5;
-    color: white;
-    border-radius: 5px;
-    font-weight: bolder;
-    border: 1px solid white;
-}

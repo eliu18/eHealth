@@ -18,8 +18,8 @@ class MongoDB {
     get(collection) {
         return new Promise((resolve, reject) => {
             this.connect().then((db) => {
-                let users = db.collection(collection).find({}).toArray();
-                resolve(users);
+                let data = db.collection(collection).find({}).toArray();
+                resolve(data);
             });
         });
     }
