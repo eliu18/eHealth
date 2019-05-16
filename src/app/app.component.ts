@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NavBar } from './enums/nav-bar.enum';
 
 @Component({
   selector: 'app-root',
@@ -7,5 +8,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'eHealth';
-  navOptions: Array<string> = ['inicio', 'consulta', 'pacientes', 'citas programadas'];
+  navOptions: Array<object> = [];
+  constructor() {
+    for (const key in NavBar) {
+      if (NavBar.hasOwnProperty(key)) {
+        const name = NavBar[key];
+        const route = key;
+        this.navOptions.push({ name, route });
+      }
+    }
+  }
 }

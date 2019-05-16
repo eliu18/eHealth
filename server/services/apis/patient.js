@@ -12,7 +12,15 @@ let collection = 'patients';
 
 router.get('/', (req, res) => {
     patientsController.getAllPatients(collection).then((patients) => {
-        res.status(200).json({ message: "Okey", patients: patients || 'No patients' });
+        res.status(200).json({ status: "ok", patients: patients || 'No patients' });
+    });
+});
+
+router.post('/', (req, res) => {
+    const patient = req.body;
+    patient.name = patient.name.toUpperCase();
+    patientsController.addPatient(collection, patient).then((status) => {
+        res.status(200).json({ status: status });
     });
 });
 

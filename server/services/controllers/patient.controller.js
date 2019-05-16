@@ -12,6 +12,15 @@ class PatientController {
             });
         });
     }
+
+    addPatient(collection, patient) {
+        const db = new DB();
+        return new Promise((resolve) => {
+            db.insert(collection, patient).then((status) => {
+                resolve(status);
+            });
+        });
+    }
 }
 
 module.exports = PatientController;

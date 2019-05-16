@@ -1,11 +1,32 @@
 <header>
-    <h1>Consulta</h1>
+    <h1>CONSULTA</h1>
 </header>
 
 <hr />
 
-<!-- Busqueda de paciente -->
-<app-search-patient></app-search-patient>
+<!-- Toggle button Buscar/Añadir -->
+<div class="toggle-button-h2-container">
+    <h2>
+        <span [ngClass]="{ 'toggle-switch-option-selected': !searchAddToggleSwitch }">Buscar</span
+    >
+    /
+    <span [ngClass]="{ 'toggle-switch-option-selected': searchAddToggleSwitch }"
+      >Añadir</span
+    >
+  </h2>
+</div>
+<div class="toggle-button-switch-container">
+  <label class="switch">
+    <input type="checkbox" [(ngModel)]="searchAddToggleSwitch" />
+    <span class="slider round"></span>
+        </label>
+</div>
+
+<!-- Busquar paciente -->
+<app-search-patient *ngIf="!searchAddToggleSwitch"></app-search-patient>
+
+<!-- Añadir paciente -->
+<app-add-patient *ngIf="searchAddToggleSwitch"></app-add-patient>
 
 <section *ngIf="">
     <!-- Historial del paciente -->

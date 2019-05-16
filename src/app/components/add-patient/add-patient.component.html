@@ -1,3 +1,6 @@
-<p>
-  add-patient works!
-</p>
+<div class="container">
+    <!-- Add input -->
+    <h3>Añadir paciente:</h3>
+    <input class="patient-add-input" type="text" placeholder="Ej. Eliu Jair Benitez Hernandez" [(ngModel)]="patient.name" />
+    <button class="patient-add-button" type="submit" (click)="addPatient()" appColorHoverButton>Añadir</button>
+</div>

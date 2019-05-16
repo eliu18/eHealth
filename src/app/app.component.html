@@ -1,10 +1,12 @@
 <!-- Inicio || Consulta || Pacientes || Citas programadas -->
 <div class="parent-nav">
-    <nav *ngFor="let option of navOptions" routerLink="/{{option|uppercase}}">
+    <nav *ngFor="let option of navOptions" routerLink="/{{ option['route'] }}">
         <a>
-      {{ option | uppercase }}
+      {{ option["name"] | uppercase }}
     </a>
     </nav>
 </div>
+
+<div class="parent-nav-copy"></div>
 
 <router-outlet></router-outlet>

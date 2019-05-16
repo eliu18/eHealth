@@ -12,6 +12,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { UppercaseDirective } from './directives/uppercase.directive';
 import { SearchPatientComponent } from './components/search-patient/search-patient.component';
 import { AddPatientComponent } from './components/add-patient/add-patient.component';
+import { ColorHoverButtonDirective } from './directives/color-hover-button.directive';
+import { SearchPatientModalComponent } from './components/search-patient-modal/search-patient-modal.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +24,8 @@ import { AddPatientComponent } from './components/add-patient/add-patient.compon
     UppercaseDirective,
     SearchPatientComponent,
     AddPatientComponent,
+    ColorHoverButtonDirective,
+    SearchPatientModalComponent,
   ],
   imports: [
     BrowserModule,

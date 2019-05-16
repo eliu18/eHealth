@@ -15,7 +15,7 @@
     <!-- Filtered List -->
     <div></div>
     <div></div>
-    <div class="patient-filtered-list-parent" *ngIf="false">
+    <div class="patient-filtered-list-parent" *ngIf="showPatients">
         <div class="patient-filtered-list-child">
             <ul *ngFor="let patient of patientsFilteredList">
                 <li>{{ patient.name }}</li>
@@ -26,4 +26,4 @@
     <div></div>
 </div>
 
-<!-- <div><input type="search" /></div> -->
+<app-search-patient-modal></app-search-patient-modal>
